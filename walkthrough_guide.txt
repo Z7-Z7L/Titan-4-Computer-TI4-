@@ -1,0 +1,19 @@
+Components:
+alu.sv // Arthimetic unit
+mem.sv // Memory
+regs.sv // Registers
+aregs.sv // Address registers
+io.sv // I/O Ports
+cu.sv // Control Unit (where it will run the program and control all the other Components)
+
+create a github repo for the project to use it in booth pc and laptop
+
+and for the GUI in odin
+
+Use the laptop and the pc to create the titan-4 in verilog
+
+programs to code later:
+  Snake
+  Pong
+  Small Breakout
+  simple drawing app
