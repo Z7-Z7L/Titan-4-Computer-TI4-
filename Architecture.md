@@ -46,35 +46,35 @@ ________________________________
 
 > Stop the computer <br>
 
-#### ADD `0001`:
+#### ADD `0001` `Set Flag`:
 
 > C = A + B (Reg C = Reg A + Reg B) <br>
 
-#### SUB `0010`:
+#### SUB `0010` `Set Flag`:
 
 > C = A - B (Reg C = Reg A +-Reg B) <br>
 
-#### AND `0011`:
+#### AND `0011` `Set Flag`:
 
 > Bitwise AND (C = A & B) <br>
 
-#### ORR `0100`:
+#### ORR `0100` `Set Flag`:
 
 > Bitwise OR (C = (A | B)) <br>
 
-#### NOR `0101`:
+#### NOR `0101` `Set Flag`:
 
 > Bitwise NOR (C = !(A | B)) <br>
 
-#### XOR `0110`:
+#### XOR `0110` `Set Flag`:
 > Bitwise XOR (C = A ⊕ B) <br>
 
-#### RSH `0111`:
+#### RSH `0111` `Set Flag`:
 
 > Right Logical Shift (C = A >> 1) <br>
 > Example: RSH R1 R2 (Shift R1 by one and load the data in R2) <br>
 
-#### LSH `1000`:
+#### LSH `1000` `Set Flag`:
 
 > Left Logical Shift (C = A << 1) <br>
 
@@ -212,7 +212,7 @@ ________________________________
 > Temporarily holds the instruction that is currently being executed
 
 #### Flag Register: FR
-> `NOTE: FR data will be set after the CMP, NOT after the ALU operation` <br>
+> `NOTE: FR data will be set after the CMP or after ALU operation` <br>
 > (Stores status flags  after the ALU operation) <br>
 ```js
 So it will be like [Z, C, N, V, EQ, NE , GT, LT]
