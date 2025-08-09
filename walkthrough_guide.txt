@@ -1,10 +1,12 @@
 Components:
 alu.sv // Arthimetic unit (Done)
 mem.sv // Memory
-regs.sv // Registers
-aregs.sv // Address registers
+reg.sv // Registers
+areg.sv // Address registers
 io.sv // I/O Ports
-cu.sv // Control Unit (where it will run the program and control all the other Components)
+cu.sv // Control unit
+cpu.sv
+
 
 and for the GUI in odin
 
