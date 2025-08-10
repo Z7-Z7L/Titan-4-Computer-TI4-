@@ -1,8 +1,7 @@
 Components:
 alu.sv // Arthimetic unit (Done)
 mem.sv // Memory
-reg.sv // Registers
-areg.sv // Address registers
+reg.sv // Registers & Address Regsiters (use the same model)
 io.sv // I/O Ports
 cu.sv // Control unit
 cpu.sv

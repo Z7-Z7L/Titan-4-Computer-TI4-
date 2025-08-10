@@ -1,54 +1,51 @@
 module Reg_tb();
-  // Inputs
-  reg [3:0] data;
-  reg clk;
-  reg rst;
-
-  // Outputs
+    logic clk;
+  logic rst;
+  logic we;
+  logic [3:0] data;
   wire [3:0] d_out;
 
-  Reg _reg (
+  // DUT instance
+  Reg #(4) dut (
     .d_out(d_out),
     .data(data),
     .clk(clk),
+    .we(we),
     .rst(rst)
   );
+
+  // Clock generator (10ns period)
+  always #5 clk = ~clk;
 
   initial begin
     $dumpfile("reg_test.vcd");
     $dumpvars(0, Reg_tb);
-  end
 
-  // Clock generation
-  initial begin
-    clk = 1'b0;
-    forever #5 clk = ~clk;
-  end
-
-  initial begin
-    rst = 1'b1;
+    // Initialize
+    clk = 0;
+    rst = 1;
+    we  = 0;
     data = 4'b0000;
 
-    #10;
-    rst = 1'b0;
+    // Reset pulse
+    #10 rst = 0;
 
-    #10;
-    data = 4'b1010;
-    
-    #10;
-    data = 4'b1100;
+    // Write 1010
+    #10 data = 4'b1010; we = 1;
+    #10 we = 0;
 
-    #10;
-    data = 4'b0011;
-
-    #10;
-    rst = 1'b1;
-
-    #10;
-    rst = 1'b0;
-
+    // Wait a bit
     #20;
-    $finish;
+
+    // Write 1111
+    data = 4'b1111; we = 1;
+    #10 we = 0;
+
+    // Reset again
+    #10 rst = 1;
+    #10 rst = 0;
+
+    #20 $finish;
   end
 
 endmodule
