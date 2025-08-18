@@ -7,14 +7,14 @@ module ALU(
   input [3:0] b
 );
 
-  localparam FLAG_Z  = 0;// 4'b0100 // Zero
-  localparam FLAG_C  = 1;// 4'b0101 // Carry
-  localparam FLAG_N  = 2;// 4'b0110 // Negative
-  localparam FLAG_V  = 3;// 4'b0111 // Overflow
-  localparam FLAG_EQ = 4;// 4'b1000 // Equal
-  localparam FLAG_NE = 5;// 4'b1001 // Not Equal
-  localparam FLAG_GT = 6;// 4'b1010 // Greater Than
-  localparam FLAG_LT = 7;// 4'b1011 // Less Than
+  localparam FLAG_Z  = 0; // 4'b0100 // Zero
+  localparam FLAG_C  = 1; // 4'b0101 // Carry
+  localparam FLAG_N  = 2; // 4'b0110 // Negative
+  localparam FLAG_V  = 3; // 4'b0111 // Overflow
+  localparam FLAG_EQ = 4; // 4'b1000 // Equal
+  localparam FLAG_NE = 5; // 4'b1001 // Not Equal
+  localparam FLAG_GT = 6; // 4'b1010 // Greater Than
+  localparam FLAG_LT = 7; // 4'b1011 // Less Than
 
   wire [4:0] sub_result = {1'b0, a} - {1'b0, b};
 
